@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  product-detail:
+    image: timoshishi/product
+    container_name: product
+    build: .
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - '80:1234'
+      - '80:1235'
+    environment:
+      - NODE_ENV=development

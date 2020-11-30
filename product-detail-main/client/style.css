@@ -1,0 +1,111 @@
+/******* RATINGS STARS *******/
+
+.ratings {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  color: #b1b1b1;
+  overflow: hidden;
+}
+.full-stars {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #eef200;
+}
+.empty-stars:before,
+.full-stars:before {
+  content: '\2605 \2605 \2605 \2605 \2605';
+  font-size: 14pt;
+}
+.empty-stars:before {
+  -webkit-text-stroke: 1px #848484;
+}
+.full-stars:before {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+}
+/* Webkit-text-stroke is not supported on firefox or IE */
+
+/* Firefox */
+@-moz-document url-prefix() {
+  .full-stars {
+    color: #ecbe24;
+  }
+}
+
+/*******   CUSTOM CAROUSEL   *******/
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  margin-left: -50px;
+}
+.carousel:hover {
+  cursor: zoom-in;
+}
+.carousel-expanded {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 50%;
+}
+.slide {
+  max-width: 100%;
+  position: 'relative';
+}
+/* i. {
+  font-size: 4rem;
+} */
+.fa-chevron-left {
+  font-size: 4rem;
+  position: relative;
+  left: 60px;
+  z-index: 100;
+  color: black;
+  opacity: 0.4;
+}
+.fa-chevron-left:hover {
+  cursor: pointer;
+}
+.fa-chevron-right {
+  font-size: 4rem;
+  position: relative;
+  right: 60px;
+  z-index: 100;
+  color: black;
+  opacity: 0.4;
+}
+.fa-chevron-right:hover {
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+img.expanded {
+  height: 100vh;
+
+  z-index: 99;
+  cursor: zoom-out;
+}
+
+/*MAGNIFIER CONTAINER*/
+* {
+  box-sizing: border-box;
+}
+
+.img-magnifier-container {
+  position: relative;
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 1px solid #000;
+  border-radius: 50%;
+  cursor: none;
+  z-index: 1000;
+  /*Set the size of the magnifier glass:*/
+  width: 100px;
+  height: 100px;
+}
